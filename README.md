@@ -1,4 +1,3 @@
-
 Puppet MOTD Module
 ==================
 
@@ -14,31 +13,31 @@ Examples
 
 Usage of this module at its simplest form:
 
-  class myclass {
+    class myclass {
 
-    # some code of your class here
-    # ...
+      # some code of your class here
+      # ...
     
-    include motd
-    motd::register { 'Myclass': }
-  }
+      include motd
+      motd::register { 'Myclass': }
+    }
 
 Would produce a motd similar to the following, when you include the module myclass in your node definition:
 
-  Puppet modules:
-  ===============
-    - Myclass
+    Puppet modules:
+    ===============
+      - Myclass
 
 You could also use it to put whatever you like in your motd, or ano other file if you change $motd::params::motd:
 
-  node mynode.example.com {
-    # some module / class / resource
-    # ...
-    include motd
-    motd::register { 'Disclaimer':
-      content => "Some disclaimer that you whish to show"
+    node mynode.example.com {
+      # some module / class / resource
+      # ...
+      include motd
+      motd::register { 'Disclaimer':
+        content => "Some disclaimer that you whish to show"
+      }
     }
-  }
 
 Notes
 -----
