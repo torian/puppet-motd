@@ -3,27 +3,35 @@
 #   This module is used to include usefull
 #   information on motd
 #
+#   This code is mainly borrowed from puppet-concat
+#   example, but it served me as the first TDD / BDD
+#   test using rspec.
+#
 #   Emiliano Castagnari (torian) <ecastag@gmail.com>
 #   2013/02/27
 #
-#   Tested platforms:
+# Tested platforms:
+#
+#	TODO  
 #
 # Parameters:
 #
 #	TODO
 #
-# Actions:
-#
-#	TODO
-#
 # Requires:
 #
-#	puppet-concat (concat) - https://github.com/ripienaar/pppppuuuuuuuuuuuppet-concat
+#	puppet-concat (concat) - https://github.com/ripienaar/puppet-concat
 #
 # Sample Usage:
 #
-#	TODO
+#   class mymodule {
 #
+#     # ...
+#     include motd
+#     motd::register { 'MyModule': }
+#     
+#   }
+# 
 class motd {
 
 	include concat::setup
