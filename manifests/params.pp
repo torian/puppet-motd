@@ -1,7 +1,7 @@
 
 class motd::params {
 
-	$header = "\n\nPuppet modules:\n============="
+	$header = "\n\nPuppet modules:\n===============\n"
 
 	case $::operatingsystem {
 		

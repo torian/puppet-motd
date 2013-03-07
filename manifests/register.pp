@@ -6,8 +6,8 @@ define motd::register($content = '', $order = 14) {
 	concat::fragment { "motd::fragment::${name}":
 		target  => $motd::params::motd,
 		content => $content ? {
-				''      => "	- ${name}",
-				default => "	- ${content}",
+				''      => "	- ${name}\n",
+				default => "	- ${content}\n",
 				},
 		order   => $order
 	}
