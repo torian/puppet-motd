@@ -47,7 +47,7 @@ class motd {
 	concat::fragment { 'motd::local':
 		target  => $motd::params::motd,
 		ensure  => $motd::params::local,
-		source  => '/etc/motd',
+		#source  => '/etc/motd',
 		order   => '00'
 	}
 	
