@@ -12,11 +12,11 @@
 #
 # Tested platforms:
 #
-#	TODO  
+#	- Debian: squeeze / Wheezy
 #
 # Parameters:
 #
-#	TODO
+#	None
 #
 # Requires:
 #
@@ -43,15 +43,18 @@ class motd {
 		mode  => 0644
 	}
 
-	concat::fragment { 'motd::header':
-		target  => $motd::params::motd,
-		content => $motd::params::header,
-		order   => '01'
-	}
-
+	# Preserve local motd information
 	concat::fragment { 'motd::local':
 		target  => $motd::params::motd,
 		ensure  => $motd::params::local,
-		order   => 15
+		source  => '/etc/motd',
+		order   => '00'
 	}
+	
+	concat::fragment { 'motd::header':
+		target  => $motd::params::motd,
+		content => $motd::params::header,
+		order   => '50'
+	}
+
 } 

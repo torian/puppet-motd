@@ -1,5 +1,5 @@
 
-define motd::register($content = '', $order = 14) {
+define motd::register($content = '', $order = 51) {
 
 	include motd::params	
 	
