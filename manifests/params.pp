@@ -5,12 +5,22 @@ class motd::params {
 
 	case $::operatingsystem {
 		
-		Debian: {
+		'Debian': {
 			$motd       = '/etc/motd'
 			$motd_local = '/etc/motd.local'
 		}
 
-		Redhat: {
+		'Redhat': {
+			$motd       = '/etc/motd'
+			$motd_local = '/etc/motd.local'
+		}
+
+		'OVS': {
+			$motd       = '/etc/motd'
+			$motd_local = '/etc/motd.local'
+		}
+
+		/(OpenSuSE|SLES)/: {
 			$motd       = '/etc/motd'
 			$motd_local = '/etc/motd.local'
 		}
