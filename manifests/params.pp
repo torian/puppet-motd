@@ -10,7 +10,7 @@ class motd::params {
 			$motd_local = '/etc/motd.local'
 		}
 
-		/(?i:Redhat|CentOS)/: {
+		/(?i:Redhat|CentOS|Scientific)/: {
 			$motd       = '/etc/motd'
 			$motd_local = '/etc/motd.local'
 		}
