@@ -25,6 +25,11 @@ class motd::params {
 			$motd_local = '/etc/motd.local'
 		}
 
+		'AIX': {
+			$motd       = '/etc/motd'
+			$motd_local = '/etc/motd.local'
+		}
+
 		default: {
 			fail("Operating system ${::operatingsystem} not supported yet")
 		}
